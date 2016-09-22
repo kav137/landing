@@ -1,3 +1,4 @@
+/********** EXTERNAL **********/
 .carousel-cell {
   width: 66%;
   height: 600px;
@@ -21,7 +22,7 @@
 	padding: 15px;
 }
 
-
+/*********** HELPERS *************/
 .helper__align-right {
 	text-align: right;
 }
@@ -46,6 +47,11 @@
 .helper__width-24rem{
 	width: 24rem;
 }
+
+/************ APP ***************/
+@custom-media --phones (width <= 736px);
+@custom-media --tablets (width >= 736px) and (width <= 1024px);
+@custom-media --desktops (width >= 1024px);
 
 :root {
 	--buttonColor: #8AB73B;
@@ -76,12 +82,15 @@ html {
 	justify-content: center;
 	align-items: center;
 	font-family: 'Roboto', sans-serif;
+
 }
 
 .landing__section {
 	width: 100%;
-	max-width: 1584px;
 	background-color: var(--backgroundColor);
+	@media (--desktops) {
+		max-width: 1584px;
+	}
 }
 
 .section {
@@ -119,7 +128,17 @@ html {
 .section__row {
 	display: flex;
 	flex-direction: row;
-	flex-wrap: nowrap;
+	@media (--desktops) {
+		flex-wrap: nowrap;
+	}
+	@media (--tablets) {
+		flex-wrap: nowrap;
+	}
+	@media (--phones) {
+		flex-direction: column;
+		flex-wrap: wrap;
+		align-items: center;
+	}
 }
 
 .section__row_centered {
@@ -134,10 +153,28 @@ html {
 .section__row-image {
 	width: auto;
 	height: 390px;
+	@media (--desktops) {
+		height: 390px;
+	}
+	@media (--tablets) {
+		height: 300px;
+	}
+	@media (--phones) {
+		height: 250px;
+	}
 }
 .section__text_small {
 	font-size: 1rem;
-	width: 19rem;
+	
+	@media (--desktops) {
+		width: 19rem;
+	}
+	@media (--tablets) {
+		width: 16rem;
+	}
+	@media (--phones) {
+		width: 15rem;
+	}
 }
 .section__button {
 	background-color: var(--buttonColor);
@@ -179,9 +216,17 @@ html {
 	bottom: 1.8rem;
 	display: flex;
 	flex-direction: row;
-	flex-wrap: nowrap;
 	justify-content: space-around;
 	align-items: center;
+	@media (--desktops) {
+		flex-wrap: nowrap;
+	}
+	@media (--tablets) {
+		flex-wrap: wrap;
+	}
+	@media (--phones) {
+		flex-wrap: wrap;
+	}
 }
 
 .section__divider-text {
@@ -203,6 +248,15 @@ html {
 	width: 15rem;
 	padding: 50px 0;
 	text-align: center;
+	@media (--desktops) {
+		padding: 50px 0;
+	}
+	@media (--tablets) {
+		padding: 50px 0;
+	}
+	@media (--phones) {
+		padding: 20px 0;
+	}
 }
 .card__number {
 	background-color: var(--counterColor);
@@ -235,6 +289,9 @@ html {
 .section__form {
 	margin: 10px auto 30px auto;
 	max-width: 360px;
+	@media (--phones) {
+		max-width: 300px;
+	}
 }
 .form {
 	border: 5px solid var(--formBorderColor);
