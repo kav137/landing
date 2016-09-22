@@ -25,7 +25,8 @@ gulp.task("compile-postcss", () => {
         .pipe(
             postcss(
                 [
-                    cssNext()
+                    cssNext(), 
+                    cssnano()
                     // autoprefixer({
                     //     browsers : ["> 5%"]
                     // })
