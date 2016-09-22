@@ -1,0 +1,28 @@
+{
+  "name": "landing",
+  "version": "0.0.1",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kav137/landing/"
+  },
+  "author": "kav137",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^6.4.1",
+    "browser-sync": "^2.16.0",
+    "cssnano": "^3.7.5",
+    "gulp": "^3.9.1",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-cssnext": "^1.0.1",
+    "gulp-ext-replace": "^0.3.0",
+    "gulp-postcss": "^6.2.0",
+    "postcss": "^5.2.0",
+    "postcss-cssnext": "^2.8.0",
+    "postcss-flexboxfixer": "0.0.5"
+  }
+}
